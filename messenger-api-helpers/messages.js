@@ -30,7 +30,7 @@ const SERVER_URL = process.env.SERVER_URL;
  */
 const setPreferencesButton = {
   type: 'web_url',
-  title: 'Set Gift Preferences',
+  title: 'Filtrer Sneakers',
   url: `${SERVER_URL}/`,
   webview_height_ratio: 'tall',
   messenger_extensions: true,
@@ -85,7 +85,7 @@ const helloRewardMessage = {
     type: 'template',
     payload: {
       template_type: 'button',
-      text: 'Thanks for joining our reward program! We’d love to send you a free birthday gift.',
+      text: 'Hello ! Fini les recherches interminables pour trouver ta pointure au meilleur prix. Plus de 130 magasins sont listés sur Sneaker Dealer. Essaye maintenant !',
       buttons: [setPreferencesButton],
     },
   },
@@ -102,7 +102,7 @@ const preferencesUpdatedMessage = {
  * Message that informs that we have their current gift selected.
  */
 const currentGiftText = {
-  text: 'This is your current gift selection. If you’d like to change it, you can do so below.',
+  text: 'Voici la paire que nous te conseillons',
 };
 
 /**
