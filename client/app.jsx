@@ -62,10 +62,7 @@ export default class App extends React.PureComponent {
 
   /* ----------  Top-level App Constants  ---------- */
 
-  static dateConfig = {
-    month: 'long',
-    day: 'numeric',
-  }
+
 
   /**
    * Keeping the display labels in the front end as a separation of concerns
@@ -88,14 +85,19 @@ export default class App extends React.PureComponent {
       image: 'adidas.jpg',
     },
     {
-      title: 'Masks',
-      subtitle: 'Face & sheet masks',
-      image: 'masks-filtered-cropped.jpg',
+      title: 'Reebok',
+      subtitle: '1249 paires référencées',
+      image: 'reebok.jpg',
     },
     {
-      title: 'Lip Treatments',
-      subtitle: 'Balms & sunscreen',
-      image: 'lip-treatments-filtered-cropped.jpg',
+      title: 'New Balance',
+      subtitle: '692 paires référencées',
+      image: 'Newbalance.png',
+    },
+    {
+      title: 'Jordan',
+      subtitle: '352 paires référencées',
+      image: 'Jordan.png',
     },
   ]
 
@@ -118,7 +120,6 @@ export default class App extends React.PureComponent {
   }
 
   state = {
-    dateOfBirth: null,
     giftCategory: null,
     environment: null,
     skinTypes: [],
@@ -316,39 +317,20 @@ export default class App extends React.PureComponent {
 
     return (
       <div className='app'>
-        <section>
-          <CellsTitle>Date of Birth</CellsTitle>
-          <Form>
-            <FormCell select id='date-of-birth'>
-              <CellHeader id='display-date'>
-                {dateString(this.state.dateOfBirth, true)}
-              </CellHeader>
-
-              <CellBody>
-                <input
-                  id='datepicker'
-                  type='date'
-                  required='required'
-                  value={this.state.dateOfBirth}
-                  onChange={(event) => this.setDateOfBirth(event.target.value)}
-                />
-              </CellBody>
-            </FormCell>
-          </Form>
-        </section>
+    
 
         <section>
-          <CellsTitle>Preferred Gift Type</CellsTitle>
+          <CellsTitle>Preferred Brand Type</CellsTitle>
           <Form radio id='gift-type'>{giftCategories}</Form>
         </section>
 
         <section>
-          <CellsTitle>What is your current environment like?</CellsTitle>
+          <CellsTitle>What is your budget?</CellsTitle>
           <div id='env-slider'>
             <Slider
               min={0}
-              max={2}
-              step={1}
+              max={300}
+              step={10}
               defaultValue={ENVIRONMENTS.indexOf(this.state.environment)}
               showValue={false}
               onChange={this.setEnvironment.bind(this)}
