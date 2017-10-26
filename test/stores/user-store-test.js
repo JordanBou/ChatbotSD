@@ -13,13 +13,12 @@ import User from '../../models/user';
 import UserStore from '../../stores/user-store';
 
 describe('UserStore', () => {
-  const {ENVIRONMENTS, ARRIVAL_PERIODS, SKIN_TYPES} = User;
+  const {ENVIRONMENTS, SKIN_TYPES} = User;
 
   const user = UserStore.insert({
     id: '42',
     dateOfBirth: '1986-09-29',
     giftCategory: Gift.CATEGORIES[1],
-    arrival_period: ARRIVAL_PERIODS[0],
     environment: ENVIRONMENTS[2],
     skinTypes: [
       SKIN_TYPES[0],
@@ -33,7 +32,6 @@ describe('UserStore', () => {
     expect(user.id).to.equal('42');
     expect(user.dateOfBirth).to.equal('1986-09-29');
     expect(user.giftCategory).to.equal(Gift.CATEGORIES[1]);
-    expect(user.arrivalPeriod).to.equal(User.ARRIVAL_PERIODS[0]);
     expect(user.environment).to.equal(User.ENVIRONMENTS[2]);
 
     expect(user.skinTypes).to.include('nike');

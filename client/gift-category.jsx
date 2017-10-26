@@ -17,7 +17,7 @@ import SelectedIndicator from './selected-indicator.jsx';
  * Conditionally renders an indicator is the categoyr is selected
  */
 
-const GiftCategory = ({title, subtitle, image, selected, setGiftCategory}) => {
+const GiftCategory = ({title, image, selected, setGiftCategory}) => {
   const imagePath = `/media/${image}`;
 
   return (

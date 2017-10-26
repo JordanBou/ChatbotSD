@@ -20,11 +20,6 @@ export default class User {
   /**
    * @property {Array.<string>} - Time since an item has become available
    */
-  static ARRIVAL_PERIODS = [
-    'thirtyDays',
-    'sixtyDays',
-    'soon',
-  ];
 
   /**
    * @property {Array.<string>} - Skin types
@@ -55,7 +50,6 @@ export default class User {
   static DEFAULT_ATTRIBUTES = {
     dateOfBirth: '2017-01-01',
     giftCategory: Gift.CATEGORIES[0],
-    arrivalPeriod: User.ARRIVAL_PERIODS[0],
     environment: User.ENVIRONMENTS[1],
     skinTypes: [],
   };
@@ -80,7 +74,6 @@ export default class User {
       id,
       dateOfBirth,
       giftCategory,
-      arrivalPeriod,
       environment,
       skinTypes,
     } = Object.assign({}, User.DEFAULT_ATTRIBUTES, attributes);
@@ -88,7 +81,6 @@ export default class User {
     this.id = id;
     this.dateOfBirth = dateOfBirth;
     this.giftCategory = giftCategory;
-    this.arrivalPeriod = arrivalPeriod;
     this.environment = environment;
     this.skinTypes = skinTypes;
     this.preferredGift = GiftStore.getByCategoryId(giftCategory)[0];

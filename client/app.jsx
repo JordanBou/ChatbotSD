@@ -33,7 +33,6 @@ import {
 
 /* ----------  Internal Components  ---------- */
 
-import ArrivalPeriod from './arrival-period.jsx';
 import Environment from './environment.jsx';
 import GiftCategory from './gift-category.jsx';
 import Loading from './loading.jsx';
@@ -110,11 +109,6 @@ export default class App extends React.PureComponent {
     'Y-3',
   ]
 
-  static arrivalPeriods = [
-    'Last 30 days',
-    'Last 60 days',
-    'Coming soon',
-  ]
 
   /* ----------  React Configuration  ---------- */
 
@@ -124,7 +118,6 @@ export default class App extends React.PureComponent {
 
   state = {
     giftCategory: null,
-    arrivalPeriod: null,
     environment: null,
     skinTypes: [],
     persist: true,
@@ -208,10 +201,6 @@ export default class App extends React.PureComponent {
     this.setState({giftCategory});
   }
 
-  setArrivalPeriod(arrivalPeriod) {
-    console.log(`Arrival Period: ${arrivalPeriod}`);
-    this.setState({arrivalPeriod});
-  }
 
   setEnvironment(envIndex) {
     const environment = ENVIRONMENTS[envIndex];
