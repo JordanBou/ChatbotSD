@@ -78,8 +78,9 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Nike',
-      image: 'nike.png',
+      title: 'Moisturizers',
+      subtitle: 'Daily moisturizers & night creams',
+      image: 'moisturizers-filtered-cropped.jpg',
     },
     {
       title: 'Cleansers',
@@ -99,14 +100,14 @@ export default class App extends React.PureComponent {
   ]
 
   static skinTypes = [
-    'Nike',
-    'adidas',
-    'Reebok',
-    'Jordan',
-    'New Balance',
-    'Levis',
-    'Saucony',
-    'Y-3',
+    'Acne or blemishes',
+    'Oiliness',
+    'Loss of tone',
+    'Wrinkles',
+    'Sensitivity',
+    'Dehydration (tight with oil)',
+    'Dryness (flaky with no oil)',
+    'Scars',
   ]
 
 
@@ -117,6 +118,7 @@ export default class App extends React.PureComponent {
   }
 
   state = {
+    dateOfBirth: null,
     giftCategory: null,
     environment: null,
     skinTypes: [],
@@ -210,16 +212,16 @@ export default class App extends React.PureComponent {
 
   addSkinType(type) {
     console.log(`Add skin type: ${type}`);
-    const oldskinTypes = this.state.skinTypes;
-    const skinTypes = new Set(oldskinTypes);
+    const oldSkinTypes = this.state.skinTypes;
+    const skinTypes = new Set(oldSkinTypes);
     skinTypes.add(type);
     this.setState({skinTypes});
   }
 
   removeSkinType(type) {
     console.log(`Remove skin type: ${type}`);
-    const oldskinTypes = this.state.skinTypes;
-    const skinTypes = new Set(oldskinTypes);
+    const oldSkinTypes = this.state.skinTypes;
+    const skinTypes = new Set(oldSkinTypes);
     skinTypes.delete(type);
     this.setState({skinTypes});
   }
@@ -229,6 +231,10 @@ export default class App extends React.PureComponent {
     this.setState({persist});
   }
 
+  setDateOfBirth(dateOfBirth) {
+    console.log(`Set date of birth: ${dateOfBirth}`);
+    this.setState({dateOfBirth});
+  }
 
   /* =============================================
      =              React Lifecycle              =
@@ -310,19 +316,40 @@ export default class App extends React.PureComponent {
     return (
       <div className='app'>
         <section>
+          <CellsTitle>Date of Birth</CellsTitle>
+          <Form>
+            <FormCell select id='date-of-birth'>
+              <CellHeader id='display-date'>
+                {dateString(this.state.dateOfBirth, true)}
+              </CellHeader>
+
+              <CellBody>
+                <input
+                  id='datepicker'
+                  type='date'
+                  required='required'
+                  value={this.state.dateOfBirth}
+                  onChange={(event) => this.setDateOfBirth(event.target.value)}
+                />
+              </CellBody>
+            </FormCell>
+          </Form>
+        </section>
+
+        <section>
           <CellsTitle>Preferred Gift Type</CellsTitle>
           <Form radio id='gift-type'>{giftCategories}</Form>
         </section>
 
         <section>
-          <CellsTitle>Quel est ton budget?</CellsTitle>
+          <CellsTitle>What is your current environment like?</CellsTitle>
           <div id='env-slider'>
             <Slider
               min={0}
-              max={300}
-              step={10}
+              max={2}
+              step={1}
               defaultValue={ENVIRONMENTS.indexOf(this.state.environment)}
-              showValue={true}
+              showValue={false}
               onChange={this.setEnvironment.bind(this)}
             />
             {environments}
@@ -330,9 +357,11 @@ export default class App extends React.PureComponent {
         </section>
 
         <section>
-          <CellsTitle>Quelles marques préfères-tu?</CellsTitle>
+          <CellsTitle>What are your top skin concerns?</CellsTitle>
           <Form checkbox>{skinTypes}</Form>
         </section>
+
+
 
         <section>
           <Form>

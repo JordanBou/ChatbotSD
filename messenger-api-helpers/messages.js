@@ -30,7 +30,7 @@ const SERVER_URL = process.env.SERVER_URL;
  */
 const setPreferencesButton = {
   type: 'web_url',
-  title: 'Set Sneakers Preferences',
+  title: 'Set Gift Preferences',
   url: `${SERVER_URL}/`,
   webview_height_ratio: 'tall',
   messenger_extensions: true,
@@ -85,7 +85,7 @@ const helloRewardMessage = {
     type: 'template',
     payload: {
       template_type: 'button',
-      text: 'Hello ! Bienvenue sur Sneaker Dealer ! Quelles sont tes préférences?',
+      text: 'Thanks for joining our reward program! We’d love to send you a free birthday gift.',
       buttons: [setPreferencesButton],
     },
   },
@@ -95,14 +95,14 @@ const helloRewardMessage = {
  * Message that informs the user that their preferences have changed.
  */
 const preferencesUpdatedMessage = {
-  text: 'Parfait, nous avons mis à jour ce que tu recherches, tu peux changer cela à tout moment dans le menu',
+  text: 'OK, we’ve updated your preferences. You can change them anytime you want from the menu.',
 };
 
 /**
  * Message that informs that we have their current gift selected.
  */
 const currentGiftText = {
-  text: 'Voici ta séléction actuelle.',
+  text: 'This is your current gift selection. If you’d like to change it, you can do so below.',
 };
 
 /**
