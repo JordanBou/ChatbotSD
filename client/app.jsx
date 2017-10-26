@@ -37,6 +37,7 @@ import Environment from './environment.jsx';
 import GiftCategory from './gift-category.jsx';
 import Loading from './loading.jsx';
 import SkinType from './skin-type.jsx';
+import BrandPreference from './brandpreference.jsx';
 
 /* ----------  Helpers  ---------- */
 
@@ -62,10 +63,6 @@ export default class App extends React.PureComponent {
 
   /* ----------  Top-level App Constants  ---------- */
 
-  static dateConfig = {
-    month: 'long',
-    day: 'numeric',
-  }
 
   /**
    * Keeping the display labels in the front end as a separation of concerns
@@ -110,6 +107,17 @@ export default class App extends React.PureComponent {
     'Scars',
   ]
 
+  static brandPreference = [
+   {
+      title: 'Nike',
+      image: 'nike.jpg',
+    },
+    {
+      title: 'adidas',
+      image: 'adidas.jpg',
+    },
+  ]
+
 
   /* ----------  React Configuration  ---------- */
 
@@ -118,10 +126,10 @@ export default class App extends React.PureComponent {
   }
 
   state = {
-    dateOfBirth: null,
     giftCategory: null,
     environment: null,
     skinTypes: [],
+    brandPreference: [],
     persist: true,
   }
 
@@ -231,10 +239,6 @@ export default class App extends React.PureComponent {
     this.setState({persist});
   }
 
-  setDateOfBirth(dateOfBirth) {
-    console.log(`Set date of birth: ${dateOfBirth}`);
-    this.setState({dateOfBirth});
-  }
 
   /* =============================================
      =              React Lifecycle              =
@@ -315,26 +319,12 @@ export default class App extends React.PureComponent {
 
     return (
       <div className='app'>
+        
         <section>
-          <CellsTitle>Date of Birth</CellsTitle>
-          <Form>
-            <FormCell select id='date-of-birth'>
-              <CellHeader id='display-date'>
-                {dateString(this.state.dateOfBirth, true)}
-              </CellHeader>
-
-              <CellBody>
-                <input
-                  id='datepicker'
-                  type='date'
-                  required='required'
-                  value={this.state.dateOfBirth}
-                  onChange={(event) => this.setDateOfBirth(event.target.value)}
-                />
-              </CellBody>
-            </FormCell>
-          </Form>
+          <CellsTitle>What are your preferred Brands?</CellsTitle>
+          <Form checkbox>{brandPreference}</Form>
         </section>
+
 
         <section>
           <CellsTitle>Preferred Gift Type</CellsTitle>
