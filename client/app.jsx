@@ -218,6 +218,24 @@ export default class App extends React.PureComponent {
     this.setState({environment});
   }
 
+
+
+  addBrandPref(type) {
+    console.log(`Add skin type: ${type}`);
+    const oldBrandPrefs = this.state.BrandPrefs;
+    const BrandPrefs = new Set(oldBrandPrefs);
+    BrandPrefs.add(type);
+    this.setState({BrandPrefs});
+  }
+
+  removeBrandPref(type) {
+    console.log(`Remove skin type: ${type}`);
+    const oldBrandPrefs = this.state.BrandPrefs;
+    const BrandPrefs = new Set(oldBrandPrefs);
+    BrandPrefs.delete(type);
+    this.setState({BrandPrefs});
+  }
+
   addSkinType(type) {
     console.log(`Add skin type: ${type}`);
     const oldSkinTypes = this.state.skinTypes;
@@ -263,6 +281,24 @@ export default class App extends React.PureComponent {
     }
 
     /* ----------  Setup Sections (anything dynamic or repeated) ---------- */
+
+    const brandPreference = App.brandPreference.map((label, index) => {
+      const value = User.BRAND_PREFERENCE[index];
+      const checked = this.state.brandPreference.has(value);
+
+      return (
+        <BrandPreference
+          key={value}
+          value={value}
+          image={image}
+          label={label}
+          checked={checked}
+          addBrandPreference={this.addBrandPreference.bind(this)}
+          removeBrandPreference={this.removeBrandPreference.bind(this)}
+        />
+      );
+    });
+
 
     const skinTypes = App.skinTypes.map((label, index) => {
       const value = User.SKIN_TYPES[index];
