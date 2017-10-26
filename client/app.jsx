@@ -100,14 +100,14 @@ export default class App extends React.PureComponent {
   ]
 
   static skinTypes = [
-    'Acne or blemishes',
-    'Oiliness',
-    'Loss of tone',
-    'Wrinkles',
-    'Sensitivity',
-    'Dehydration (tight with oil)',
-    'Dryness (flaky with no oil)',
-    'Scars',
+    {
+      label: 'Nike',
+      image: 'nike.jpg',
+    },
+    {
+      label: 'adidas',
+      image: 'adidas.jpg',
+    },    
   ]
 
 
@@ -121,7 +121,7 @@ export default class App extends React.PureComponent {
     dateOfBirth: null,
     giftCategory: null,
     environment: null,
-    skinTypes: [],
+    skinTypes: null,
     persist: true,
   }
 
