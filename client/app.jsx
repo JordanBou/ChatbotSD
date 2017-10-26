@@ -331,8 +331,8 @@ export default class App extends React.PureComponent {
               min={0}
               max={300}
               step={10}
-              defaultValue={ENVIRONMENTS.indexOf(this.state.environment)}
-              showValue={false}
+              defaultValue={150}
+              showValue={true}
               onChange={this.setEnvironment.bind(this)}
             />
             {environments}
@@ -349,13 +349,13 @@ export default class App extends React.PureComponent {
         <section>
           <Form>
             <FormCell switch>
-              <CellBody>Save this info for next time</CellBody>
+              <CellBody>Sauvegarder pour la prochaine fois</CellBody>
               <CellFooter>{persistSwitch}</CellFooter>
             </FormCell>
           </Form>
         </section>
         <ButtonArea className='see-options'>
-          <Button onClick={() => this.pushData()}>See Gift Options</Button>
+          <Button onClick={() => this.pushData()}>Check Sneakers offers</Button>
         </ButtonArea>
       </div>
     );

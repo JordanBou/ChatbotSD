@@ -43,11 +43,7 @@ export default class User {
   /**
    * @property {Array.<string>} - Level of humidity in environment
    */
-  static ENVIRONMENTS = [
-    '0€',
-    ' ',
-    '300+€',
-  ];
+  static ENVIRONMENTS = [];
 
   /**
    * @property {Array.<string>} - Defaults attributes for users
