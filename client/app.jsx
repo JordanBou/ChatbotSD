@@ -78,14 +78,14 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Moisturizers',
-      subtitle: 'Daily moisturizers & night creams',
-      image: 'moisturizers-filtered-cropped.jpg',
+      title: 'Nike',
+      subtitle: '6846 paires référencées',
+      image: 'nike.jpg',
     },
     {
-      title: 'Cleansers',
-      subtitle: 'Face washes, wipes & exfoliators',
-      image: 'cleansers-filtered-cropped.jpg',
+      title: 'adidas',
+      subtitle: '3449 paires référencées',
+      image: 'adidas.jpg',
     },
     {
       title: 'Masks',
@@ -100,14 +100,14 @@ export default class App extends React.PureComponent {
   ]
 
   static skinTypes = [
-    {
-      label: 'Nike',
-      image: 'nike.jpg',
-    },
-    {
-      label: 'adidas',
-      image: 'adidas.jpg',
-    },    
+    'Acne or blemishes',
+    'Oiliness',
+    'Loss of tone',
+    'Wrinkles',
+    'Sensitivity',
+    'Dehydration (tight with oil)',
+    'Dryness (flaky with no oil)',
+    'Scars',
   ]
 
 
@@ -121,7 +121,7 @@ export default class App extends React.PureComponent {
     dateOfBirth: null,
     giftCategory: null,
     environment: null,
-    skinTypes: null,
+    skinTypes: [],
     persist: true,
   }
 
