@@ -79,9 +79,8 @@ export default class App extends React.PureComponent {
 
   static giftCategories = [
     {
-      title: 'Moisturizers',
-      subtitle: 'Daily moisturizers & night creams',
-      image: 'moisturizers-filtered-cropped.jpg',
+      title: 'Nike',
+      image: 'nike.png',
     },
     {
       title: 'Cleansers',
