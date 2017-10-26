@@ -99,7 +99,7 @@ export default class App extends React.PureComponent {
     },
   ]
 
-  static brands = [
+  static skinTypes = [
     'Nike',
     'adidas',
     'Reebok',
@@ -126,7 +126,7 @@ export default class App extends React.PureComponent {
     giftCategory: null,
     arrivalPeriod: null,
     environment: null,
-    brands: [],
+    skinTypes: [],
     persist: true,
   }
 
@@ -163,7 +163,7 @@ export default class App extends React.PureComponent {
 
         this.setState({
           ...jsonResponse,
-          brands: new Set(jsonResponse.brands),
+          skinTypes: new Set(jsonResponse.skinTypes),
         });
       }).catch((err) => console.error('Error pulling data', err));
   }
@@ -197,7 +197,7 @@ export default class App extends React.PureComponent {
   jsonState() {
     return JSON.stringify({
       ...this.state,
-      brands: [...this.state.brands],
+      skinTypes: [...this.state.skinTypes],
     });
   }
 
@@ -221,18 +221,18 @@ export default class App extends React.PureComponent {
 
   addSkinType(type) {
     console.log(`Add skin type: ${type}`);
-    const oldbrands = this.state.brands;
-    const brands = new Set(oldbrands);
-    brands.add(type);
-    this.setState({brands});
+    const oldskinTypes = this.state.skinTypes;
+    const skinTypes = new Set(oldskinTypes);
+    skinTypes.add(type);
+    this.setState({skinTypes});
   }
 
   removeSkinType(type) {
     console.log(`Remove skin type: ${type}`);
-    const oldbrands = this.state.brands;
-    const brands = new Set(oldbrands);
-    brands.delete(type);
-    this.setState({brands});
+    const oldskinTypes = this.state.skinTypes;
+    const skinTypes = new Set(oldskinTypes);
+    skinTypes.delete(type);
+    this.setState({skinTypes});
   }
 
   setPersist(persist) {
@@ -265,9 +265,9 @@ export default class App extends React.PureComponent {
 
     /* ----------  Setup Sections (anything dynamic or repeated) ---------- */
 
-    const brands = App.brands.map((label, index) => {
+    const skinTypes = App.skinTypes.map((label, index) => {
       const value = User.SKIN_TYPES[index];
-      const checked = this.state.brands.has(value);
+      const checked = this.state.skinTypes.has(value);
 
       return (
         <SkinType
@@ -342,7 +342,7 @@ export default class App extends React.PureComponent {
 
         <section>
           <CellsTitle>Quelles marques préfères-tu?</CellsTitle>
-          <Form checkbox>{brands}</Form>
+          <Form checkbox>{skinTypes}</Form>
         </section>
 
         <section>

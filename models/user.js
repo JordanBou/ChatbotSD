@@ -30,7 +30,7 @@ export default class User {
    * @property {Array.<string>} - Skin types
    */
   static SKIN_TYPES = [
-    'acne',
+    'nike',
     'oil',
     'tone',
     'wrinkles',

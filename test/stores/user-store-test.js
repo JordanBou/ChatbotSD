@@ -36,7 +36,7 @@ describe('UserStore', () => {
     expect(user.arrivalPeriod).to.equal(User.ARRIVAL_PERIODS[0]);
     expect(user.environment).to.equal(User.ENVIRONMENTS[2]);
 
-    expect(user.skinTypes).to.include('acne');
+    expect(user.skinTypes).to.include('nike');
     expect(user.skinTypes).to.include('tone');
   });
 
