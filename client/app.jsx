@@ -37,7 +37,6 @@ import Environment from './environment.jsx';
 import GiftCategory from './gift-category.jsx';
 import Loading from './loading.jsx';
 import SkinType from './skin-type.jsx';
-import BrandPreference from './brandpreference.jsx';
 
 /* ----------  Helpers  ---------- */
 
@@ -63,6 +62,10 @@ export default class App extends React.PureComponent {
 
   /* ----------  Top-level App Constants  ---------- */
 
+  static dateConfig = {
+    month: 'long',
+    day: 'numeric',
+  }
 
   /**
    * Keeping the display labels in the front end as a separation of concerns
@@ -107,17 +110,6 @@ export default class App extends React.PureComponent {
     'Scars',
   ]
 
-  static brandPreference = [
-   {
-      title: 'Nike',
-      image: 'nike.jpg',
-    },
-    {
-      title: 'adidas',
-      image: 'adidas.jpg',
-    },
-  ]
-
 
   /* ----------  React Configuration  ---------- */
 
@@ -126,10 +118,10 @@ export default class App extends React.PureComponent {
   }
 
   state = {
+    dateOfBirth: null,
     giftCategory: null,
     environment: null,
     skinTypes: [],
-    brandPreference: [],
     persist: true,
   }
 
@@ -212,28 +204,11 @@ export default class App extends React.PureComponent {
   }
 
 
+
   setEnvironment(envIndex) {
     const environment = ENVIRONMENTS[envIndex];
     console.log(`Environment: ${environment}`);
     this.setState({environment});
-  }
-
-
-
-  addBrandPref(type) {
-    console.log(`Add skin type: ${type}`);
-    const oldBrandPrefs = this.state.BrandPrefs;
-    const BrandPrefs = new Set(oldBrandPrefs);
-    BrandPrefs.add(type);
-    this.setState({BrandPrefs});
-  }
-
-  removeBrandPref(type) {
-    console.log(`Remove skin type: ${type}`);
-    const oldBrandPrefs = this.state.BrandPrefs;
-    const BrandPrefs = new Set(oldBrandPrefs);
-    BrandPrefs.delete(type);
-    this.setState({BrandPrefs});
   }
 
   addSkinType(type) {
@@ -257,6 +232,10 @@ export default class App extends React.PureComponent {
     this.setState({persist});
   }
 
+  setDateOfBirth(dateOfBirth) {
+    console.log(`Set date of birth: ${dateOfBirth}`);
+    this.setState({dateOfBirth});
+  }
 
   /* =============================================
      =              React Lifecycle              =
@@ -281,24 +260,6 @@ export default class App extends React.PureComponent {
     }
 
     /* ----------  Setup Sections (anything dynamic or repeated) ---------- */
-
-    const brandPreference = App.brandPreference.map((label, index) => {
-      const value = User.BRAND_PREFERENCE[index];
-      const checked = this.state.brandPreference.has(value);
-
-      return (
-        <BrandPreference
-          key={value}
-          value={value}
-          image={image}
-          label={label}
-          checked={checked}
-          addBrandPreference={this.addBrandPreference.bind(this)}
-          removeBrandPreference={this.removeBrandPreference.bind(this)}
-        />
-      );
-    });
-
 
     const skinTypes = App.skinTypes.map((label, index) => {
       const value = User.SKIN_TYPES[index];
@@ -355,12 +316,26 @@ export default class App extends React.PureComponent {
 
     return (
       <div className='app'>
-        
         <section>
-          <CellsTitle>What are your preferred Brands?</CellsTitle>
-          <Form checkbox>{brandPreference}</Form>
-        </section>
+          <CellsTitle>Date of Birth</CellsTitle>
+          <Form>
+            <FormCell select id='date-of-birth'>
+              <CellHeader id='display-date'>
+                {dateString(this.state.dateOfBirth, true)}
+              </CellHeader>
 
+              <CellBody>
+                <input
+                  id='datepicker'
+                  type='date'
+                  required='required'
+                  value={this.state.dateOfBirth}
+                  onChange={(event) => this.setDateOfBirth(event.target.value)}
+                />
+              </CellBody>
+            </FormCell>
+          </Form>
+        </section>
 
         <section>
           <CellsTitle>Preferred Gift Type</CellsTitle>
