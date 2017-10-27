@@ -233,10 +233,6 @@ export default class App extends React.PureComponent {
     this.setState({persist});
   }
 
-  setDateOfBirth(dateOfBirth) {
-    console.log(`Set date of birth: ${dateOfBirth}`);
-    this.setState({dateOfBirth});
-  }
 
   /* =============================================
      =              React Lifecycle              =
@@ -338,9 +334,6 @@ export default class App extends React.PureComponent {
             {environments}
           </div>
         </section>
-
-
-
 
        
 {/* 

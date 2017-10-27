@@ -49,7 +49,6 @@ export default class User {
    * @property {Array.<string>} - Defaults attributes for users
    */
   static DEFAULT_ATTRIBUTES = {
-    dateOfBirth: '2017-01-01',
     giftCategory: Gift.CATEGORIES[0],
     arrivalPeriod: User.ARRIVAL_PERIODS[0],
     environment: User.ENVIRONMENTS[1],
@@ -74,7 +73,6 @@ export default class User {
   constructor(attributes) {
     const {
       id,
-      dateOfBirth,
       giftCategory,
       arrivalPeriod,
       environment,
@@ -82,7 +80,6 @@ export default class User {
     } = Object.assign({}, User.DEFAULT_ATTRIBUTES, attributes);
 
     this.id = id;
-    this.dateOfBirth = dateOfBirth;
     this.giftCategory = giftCategory;
     this.arrivalPeriod = arrivalPeriod;
     this.environment = environment;

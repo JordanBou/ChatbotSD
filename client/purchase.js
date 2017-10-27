@@ -54,12 +54,12 @@ const additionalOptions = {
 const standardShipping = {
   id: 'standard',
   label: 'Standard shipping',
-  amount: {currency: 'USD', value: '1.10'},
+  amount: {currency: 'EUR', value: '3.00'},
 };
 const expressShipping = {
   id: 'express',
   label: 'Express shipping',
-  amount: {currency: 'USD', value: '1.20'},
+  amount: {currency: 'EUR', value: '12.00'},
   selected: true,
 }
 
@@ -70,7 +70,7 @@ const expressShipping = {
 * @returns {String} Tax of the item.
 */
 const calculateTax = (price) => {
-  return (price * .07).toFixed(2);
+  return (price * .20).toFixed(2);
 };
 
 /**
@@ -81,7 +81,7 @@ const calculateTax = (price) => {
 * @returns {String} Total price including shipping and tax of purchased item.
 */
 const calculateTotal = (price, shipping) => {
-  return (price * 1.07 + parseFloat(shipping)).toFixed(2);
+  return (price * 1.20 + parseFloat(shipping)).toFixed(2);
 };
 
 /**
@@ -98,14 +98,14 @@ const paymentDetails = (giftId, shipping) => {
       {
         label: gift.name,
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value : gift.price.toString()
         },
       },
       {
         label: 'Sales Tax',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value : calculateTax(gift.price)
         },
       },
@@ -114,7 +114,7 @@ const paymentDetails = (giftId, shipping) => {
     total: {
       label: 'Total due', // defaults to "Total"
       amount: {
-        currency: 'USD',
+        currency: 'EUR',
         value : calculateTotal(gift.price, 0.0)// shipping.amount.value)
       },
     },

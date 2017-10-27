@@ -17,6 +17,15 @@ import UserStore from '../stores/user-store';
 
 const router = express.Router();
 
+
+
+
+
+
+
+
+
+
 // Get user preferences
 router.get('/:userID', ({params: {userID}}, res) => {
   const user = UserStore.get(userID) || UserStore.insert({id: userID});
@@ -36,6 +45,16 @@ router.put('/:userID', ({body, params: {userID}}, res) => {
   if (body.persist) {
     UserStore.insert({...body, id: userID});
   }
+
+
+
+
+
+
+
+
+
+
 
   const userJSON = JSON.stringify({...body, userID});
   console.log(`PUT User response: ${userJSON}`);
