@@ -41,7 +41,7 @@ const setPreferencesButton = {
  */
 const viewDetailsButton = (giftId) => {
   return {
-    title: 'View Details',
+    title: 'Afficher la paire',
     type: 'web_url',
     url: `${SERVER_URL}/gifts/${giftId}`,
     webview_height_ratio: 'compact',
@@ -55,7 +55,7 @@ const viewDetailsButton = (giftId) => {
 const chooseGiftButton = (giftId) => {
   return {
     type: 'postback',
-    title: 'Choose This Gift',
+    title: 'Choose This Pair',
     payload: JSON.stringify({
       type: 'CHOOSE_GIFT',
       data: {
@@ -70,7 +70,7 @@ const chooseGiftButton = (giftId) => {
  */
 const changeGiftButton = {
   type: 'postback',
-  title: 'Change Gift',
+  title: 'I prefer another one :(',
   payload: JSON.stringify({
     type: 'CHANGE_GIFT',
   }),
@@ -85,7 +85,7 @@ const helloRewardMessage = {
     type: 'template',
     payload: {
       template_type: 'button',
-      text: 'Hello ! Fini les recherches interminables pour trouver ta pointure au meilleur prix. Plus de 130 magasins sont listés sur Sneaker Dealer. Essaye maintenant !',
+      text: 'Fini les recherches pour trouver ta pointure au meilleur prix. Essaye maintenant !',
       buttons: [setPreferencesButton],
     },
   },
@@ -95,7 +95,7 @@ const helloRewardMessage = {
  * Message that informs the user that their preferences have changed.
  */
 const preferencesUpdatedMessage = {
-  text: 'OK, we’ve updated your preferences. You can change them anytime you want from the menu.',
+  text: 'Nous avons bien enregistré tes préférences. Tu pourras les changer dans le menu',
 };
 
 /**

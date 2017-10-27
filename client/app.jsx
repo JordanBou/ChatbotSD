@@ -339,10 +339,20 @@ export default class App extends React.PureComponent {
           </div>
         </section>
 
-        <section>
-          <CellsTitle>What are your top skin concerns?</CellsTitle>
+
+
+
+       
+{/* 
+
+     <section>
+         <CellsTitle>What are your top skin concerns?</CellsTitle>
           <Form checkbox>{skinTypes}</Form>
-        </section>
+     </section>
+
+*/} 
+
+
 
 
 
