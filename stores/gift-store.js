@@ -63,29 +63,6 @@ GIFT_STORE.insert(
     118.00,
   ));
 
-GIFT_STORE.insert(
-  new Gift(
-    'nike-softening',
-    'Softening Cream',
-    {
-      original: `${SERVER_URL}/media/nike/softening-new.jpg`,
-      square: `${SERVER_URL}/media/nike/softening-square.jpg`,
-    },
-    NIKE,
-    8.99,
-  ));
-
-GIFT_STORE.insert(
-  new Gift(
-    'nike-revitalizing',
-    'Revitalizing Cream',
-    {
-      original: `${SERVER_URL}/media/nike/revitalizing-new.jpg`,
-      square: `${SERVER_URL}/media/nike/revitalizing-square.jpg`,
-    },
-    NIKE,
-    12.49,
-  ));
 
 GIFT_STORE.insert(
   new Gift(
@@ -95,33 +72,10 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/cleansers/lathering-new.jpg`,
       square: `${SERVER_URL}/media/cleansers/lathering-square.jpg`,
     },
-    CLEANER,
+    ADIDAS,
     32.22,
   ));
 
-GIFT_STORE.insert(
-  new Gift(
-    'cleansers-refining',
-    'Refining Cleanser',
-    {
-      original: `${SERVER_URL}/media/cleansers/refining-new.jpg`,
-      square: `${SERVER_URL}/media/cleansers/refining-square.jpg`,
-    },
-    CLEANER,
-    1.99,
-  ));
-
-GIFT_STORE.insert(
-  new Gift(
-    'cleansers-kara',
-    'VB Cleanser',
-    {
-      original: `${SERVER_URL}/media/cleansers/kara-new.jpg`,
-      square: `${SERVER_URL}/media/cleansers/kara-square.jpg`,
-    },
-    CLEANER,
-    1.99,
-  ));
 
 GIFT_STORE.insert(
   new Gift(
@@ -131,33 +85,10 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/masks/kara-new.jpg`,
       square: `${SERVER_URL}/media/masks/kara-square.jpg`,
     },
-    MASK,
+    REEBOK,
     1.99,
   ));
 
-GIFT_STORE.insert(
-  new Gift(
-    'masks-hydrating',
-    'Hydrating Mask',
-    {
-      original: `${SERVER_URL}/media/masks/hydrating-new.jpg`,
-      square: `${SERVER_URL}/media/masks/hydrating-square.jpg`,
-    },
-    MASK,
-    1.99,
-  ));
-
-GIFT_STORE.insert(
-  new Gift(
-    'masks-clay',
-    'Clay Mask',
-    {
-      original: `${SERVER_URL}/media/masks/clay-new.jpg`,
-      square: `${SERVER_URL}/media/masks/clay-square.jpg`,
-    },
-    MASK,
-    1.99,
-  ));
 
 GIFT_STORE.insert(
   new Gift(
@@ -167,33 +98,22 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/lip/kara-new.jpg`,
       square: `${SERVER_URL}/media/lip/kara-square.jpg`,
     },
-    LIP,
+    NEWBALANCE,
     1.99,
   ));
 
 GIFT_STORE.insert(
   new Gift(
-    'lip-restorative',
-    'Restorative Lip Balm',
+    'jordan-kara',
+    'Jordan B. Lip Butter',
     {
-      original: `${SERVER_URL}/media/lip/restorative-new.jpg`,
-      square: `${SERVER_URL}/media/lip/restorative-square.jpg`,
+      original: `${SERVER_URL}/media/lip/kara-new.jpg`,
+      square: `${SERVER_URL}/media/lip/kara-square.jpg`,
     },
-    LIP,
+    JORDAN,
     1.99,
   ));
 
-GIFT_STORE.insert(
-  new Gift(
-    'lip-hydrating',
-    'Hydrating Lip Butter',
-    {
-      original: `${SERVER_URL}/media/lip/hydrating-new.jpg`,
-      square: `${SERVER_URL}/media/lip/hydrating-square.jpg`,
-    },
-    LIP,
-    1.99,
-  ));
 /* eslint-enable max-len */
 
 export default GIFT_STORE;
