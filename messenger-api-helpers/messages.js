@@ -125,7 +125,6 @@ const currentGiftButton = (recipientId) => {
           {
             title: `Your Gift: ${gift.name}`,
             image_url: gift.images.original,
-            subtitle: gift.description,
             buttons: [
               viewDetailsButton(gift.id),
               changeGiftButton,
@@ -150,15 +149,13 @@ const giftOptionsText = {
  *
  * @param {Object} id - The Gifts unique id.
  * @param {Object} name - The Gifts name.
- * @param {Object} description - The Gifts description.
  * @param {Object} original - Path to the original image for the gift.
  * @returns {Object} Messenger representation of a carousel item.
  */
-const giftToCarouselItem = ({id, name, description, images: {original}}) => {
+const giftToCarouselItem = ({id, name, images: {original}}) => {
   return {
     title: name,
     image_url: original,
-    subtitle: description,
     buttons: [
       viewDetailsButton(id),
       chooseGiftButton(id),

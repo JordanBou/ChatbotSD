@@ -24,7 +24,7 @@ const Environment = ({active, label}) => {
 
   return (
     <CellFooter id={label} className={`slider-option ${activeClass}`}>
-      {humanize(label)}
+      {humanize(label)+'€'}
     </CellFooter>
   );
 };

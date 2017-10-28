@@ -49,7 +49,7 @@ const buyNow = (giftId, userId) => {
 /*
  * A component for displaying the Product details for a given product
  */
-const Gift = ({id, name, images, description, userId}) => {
+const Gift = ({id, name, images, userId}) => {
   return (
     <div>
       <div id='product' className='static-page'>
@@ -58,14 +58,13 @@ const Gift = ({id, name, images, description, userId}) => {
             <img className='product-image' src={images.square}/>
             <div className='product-details'>
               <h1>{name}</h1>
-              <p className='static-page-subtitle'>{description}</p>
             </div>
           </div>
         </div>
       </div>
       <ButtonArea className='see-options' direction='horizontal'>
         <Button onClick={() => selectGift(id, userId)}>
-          Choose Gift
+          Choose this Pair
         </Button>
         <Button onClick={() => buyNow(id, userId)}>
           Buy Now

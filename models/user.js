@@ -17,14 +17,6 @@ import GiftStore from '../stores/gift-store';
  * @class User
  */
 export default class User {
-  /**
-   * @property {Array.<string>} - Time since an item has become available
-   */
-  static ARRIVAL_PERIODS = [
-    'thirtyDays',
-    'sixtyDays',
-    'soon',
-  ];
 
   /**
    * @property {Array.<string>} - Skin types
@@ -50,7 +42,6 @@ export default class User {
    */
   static DEFAULT_ATTRIBUTES = {
     giftCategory: Gift.CATEGORIES[0],
-    arrivalPeriod: User.ARRIVAL_PERIODS[0],
     environment: User.ENVIRONMENTS[1],
     skinTypes: [],
   };
@@ -66,22 +57,17 @@ export default class User {
    * @param {string} attributes.skinTypes - User's skin type (from `User.SKIN_TYPES`)
    * @param {string} attributes.giftCategory -
    *   Preferred type of gift (from `Gift.CATEGORIES`)
-   * @param {string} attributes.arrivalPeriod -
-   *   How recently a gift should have been released (from `User.ARRIVAL_PERIODS`)
-   */
    /* eslint-enable max-len */
   constructor(attributes) {
     const {
       id,
       giftCategory,
-      arrivalPeriod,
       environment,
       skinTypes,
     } = Object.assign({}, User.DEFAULT_ATTRIBUTES, attributes);
 
     this.id = id;
     this.giftCategory = giftCategory;
-    this.arrivalPeriod = arrivalPeriod;
     this.environment = environment;
     this.skinTypes = skinTypes;
     this.preferredGift = GiftStore.getByCategoryId(giftCategory)[0];
