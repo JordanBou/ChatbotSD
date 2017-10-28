@@ -56,8 +56,8 @@ GIFT_STORE.insert(
     'nike-airmax',
     'Nike Air Max 90 Essential',
     {
-      original: `${SERVER_URL}/media/nike/airmax-new.png`,
-      square: `${SERVER_URL}/media/nike/airmax-square.png`,
+      original: `${SERVER_URL}/media/nike/airmax-new.jpg`,
+      square: `${SERVER_URL}/media/nike/airmax-square.jpg`,
     },
     NIKE,
     118.00,
