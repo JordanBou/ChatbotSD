@@ -12,7 +12,7 @@ import Store from './store';
 import Gift from '../models/gift';
 
 const SERVER_URL = process.env.SERVER_URL;
-const [MOISTURIZER, CLEANER, MASK, LIP] = Gift.CATEGORIES;
+const [NIKE, ADIDAS, REEBOK, NEWBALANCE, JORDAN] = Gift.CATEGORIES;
 
 /**
  * Stores data for the Gifts we display to users
@@ -53,40 +53,37 @@ const GIFT_STORE = new GiftStore();
 /* eslint-disable max-len */
 GIFT_STORE.insert(
   new Gift(
-    'moisturizers-kara',
-    'VB Cream',
+    'nike-airmax',
+    'Nike Air Max 90 Essential',
     {
-      original: `${SERVER_URL}/media/moisturizers/kara-new.jpg`,
-      square: `${SERVER_URL}/media/moisturizers/kara-square.jpg`,
+      original: `${SERVER_URL}/media/nike/airmax-new.png`,
+      square: `${SERVER_URL}/media/nike/airmax-square.png`,
     },
-    'A light, non-greasy formula, providing effective and refreshing hydration.',
-    MOISTURIZER,
-    1.59,
+    NIKE,
+    118.00,
   ));
 
 GIFT_STORE.insert(
   new Gift(
-    'moisturizers-softening',
+    'nike-softening',
     'Softening Cream',
     {
-      original: `${SERVER_URL}/media/moisturizers/softening-new.jpg`,
-      square: `${SERVER_URL}/media/moisturizers/softening-square.jpg`,
+      original: `${SERVER_URL}/media/nike/softening-new.jpg`,
+      square: `${SERVER_URL}/media/nike/softening-square.jpg`,
     },
-    'A rich, creamy moisturizer that smooths & softens extremely dry skin.',
-    MOISTURIZER,
+    NIKE,
     8.99,
   ));
 
 GIFT_STORE.insert(
   new Gift(
-    'moisturizers-revitalizing',
+    'nike-revitalizing',
     'Revitalizing Cream',
     {
-      original: `${SERVER_URL}/media/moisturizers/revitalizing-new.jpg`,
-      square: `${SERVER_URL}/media/moisturizers/revitalizing-square.jpg`,
+      original: `${SERVER_URL}/media/nike/revitalizing-new.jpg`,
+      square: `${SERVER_URL}/media/nike/revitalizing-square.jpg`,
     },
-    'Super Revitalizing Cream reveals beautifully resilient-looking skin.',
-    MOISTURIZER,
+    NIKE,
     12.49,
   ));
 
@@ -98,7 +95,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/cleansers/lathering-new.jpg`,
       square: `${SERVER_URL}/media/cleansers/lathering-square.jpg`,
     },
-    'A rich lathering cleanser to purify and hydrate all skin types.',
     CLEANER,
     32.22,
   ));
@@ -111,7 +107,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/cleansers/refining-new.jpg`,
       square: `${SERVER_URL}/media/cleansers/refining-square.jpg`,
     },
-    'An energizing cleanser that removes impurities and dead skin cells for a more refined skin texture.',
     CLEANER,
     1.99,
   ));
@@ -124,7 +119,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/cleansers/kara-new.jpg`,
       square: `${SERVER_URL}/media/cleansers/kara-square.jpg`,
     },
-    'A daily foaming cleanser that promotes visibly clearer skin without drying.',
     CLEANER,
     1.99,
   ));
@@ -137,7 +131,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/masks/kara-new.jpg`,
       square: `${SERVER_URL}/media/masks/kara-square.jpg`,
     },
-    'Deeply cleanse your skin with our purifying and balancing seaweed oil clay mask.',
     MASK,
     1.99,
   ));
@@ -150,7 +143,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/masks/hydrating-new.jpg`,
       square: `${SERVER_URL}/media/masks/hydrating-square.jpg`,
     },
-    'Hydrates and soothes, while leaving skin feeling fresh thanks to its mineral rich formula and liquid gel texture.',
     MASK,
     1.99,
   ));
@@ -163,7 +155,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/masks/clay-new.jpg`,
       square: `${SERVER_URL}/media/masks/clay-square.jpg`,
     },
-    'Help cleanse and nourish your skin with this clay mask infused with Lavender.',
     MASK,
     1.99,
   ));
@@ -176,7 +167,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/lip/kara-new.jpg`,
       square: `${SERVER_URL}/media/lip/kara-square.jpg`,
     },
-    'An intensive, creamy moisturizer for lips with the zesty pink grapefruit essence.',
     LIP,
     1.99,
   ));
@@ -189,7 +179,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/lip/restorative-new.jpg`,
       square: `${SERVER_URL}/media/lip/restorative-square.jpg`,
     },
-    'A restorative formula that hydrates lips while softening and smoothing for a beautiful, healthy-looking smile',
     LIP,
     1.99,
   ));
@@ -202,7 +191,6 @@ GIFT_STORE.insert(
       original: `${SERVER_URL}/media/lip/hydrating-new.jpg`,
       square: `${SERVER_URL}/media/lip/hydrating-square.jpg`,
     },
-    'A mixture of Shea Butter and Rice Wax offers deep hydration and softness.',
     LIP,
     1.99,
   ));
