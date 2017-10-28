@@ -15,10 +15,11 @@ export default class Gift {
    * @property {Array.<string>} - Available gift categories
    */
   static CATEGORIES = [
-    'moisturizer',
-    'cleanser',
-    'mask',
-    'lipTreatment',
+    'nike',
+    'adidas',
+    'reebok',
+    'newbalance',
+    'jordan',
   ];
 
   /**
@@ -29,14 +30,12 @@ export default class Gift {
    * @param {object} images - Path to images.
    * @param {object} images.original - Full size image.
    * @param {object} images.square - Square cropped image.
-   * @param {string} description - Description of the gift.
    * @param {string} category - Category of this gift (`Gift.CATEGORIES`).
    */
-  constructor(id, name, images, description, category, price) {
+  constructor(id, name, images, category, price) {
     this.id = id;
     this.name = name;
     this.images = images;
-    this.description = description;
     this.category = category;
     this.price = price;
   }
